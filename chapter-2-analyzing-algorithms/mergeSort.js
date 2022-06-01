@@ -38,8 +38,13 @@ MERGE(A, p, q, r)
 28  k = k + 1
 
 MERGE-SORT(A,p,r)
-1  if p >= r
-2  
+1  if p >= r // zero or one element in the array i.e basecase
+2   return
+3  q = Math.floor((p + r)/2) // mid point of A[p:r]
+4  MERGE-SORT(A, p, q) // recursively sort A[P:q]
+5  MERGE-SORT(A, q + 1, r) // recursively sort A[q+1:r]
+6  // Merge A[p:q] and A[q+1:r] into A[p:r]
+7  MERGE(A,p,q,r)
 */
 
 let merge = function (A, p, q, r) {
@@ -97,9 +102,21 @@ let merge = function (A, p, q, r) {
   }
 };
 
-let mergeSort = function () {};
+let mergeSort = function (A, p, r) {
+  if (p >= r) return; // zero or one element in the array i.e basecase
 
-let a = [2, 4, 6, 7, 1, 2, 3, 5];
-console.log(`Array before merge is: ${a}`);
-merge(a, 0, 3, 7);
-console.log(`Array after merge is: ${a}`);
+  let q = Math.floor((p + r) / 2); // mid point of A[p:r]
+  mergeSort(A, p, q); // recursively sort A[p:q]
+  mergeSort(A, q + 1, r); // recursively sort A[q + 1:r]
+  merge(A, p, q, r);
+};
+
+// let a = [2, 4, 6, 7, 1, 2, 3, 5];
+// console.log(`Array before merge is: ${a}`);
+// merge(a, 0, 3, 7);
+// console.log(`Array after merge is: ${a}`);
+
+let a = [3, 41, 52, 26, 38, 57, 9, 49];
+console.log(`Array before merge sort is: ${a}`);
+mergeSort(a, 0, 7);
+console.log(`Array after merge sort is: ${a}`);
