@@ -85,15 +85,15 @@ INSERTION-SORT-RECURSIVE(A,n)
 1 if n <= 1
 2   return
 3 // recursively sort A[1:n - 1]
-3 INSERTION-SORT-RECURSIVE(A,n-1)
-4 // place the element A[n] into the sorted sub-array A[1:n - 1] so that 
+4 INSERTION-SORT-RECURSIVE(A,n - 1)
+5 // place the element A[n] into the sorted sub-array A[1:n - 1] so that 
   // entire A[1:n] is sorted.
-5 j = n - 1
-6 key = A[n]
-7 while j > 0 and A[j] > key
-8   A[j + 1] = A[j]
-9   j = j - 1
-10 A[j + 1] = key
+6 j = n - 1
+7 key = A[n]
+8 while j > 0 and A[j] > key
+9   A[j + 1] = A[j]
+10   j = j - 1
+11 A[j + 1] = key
 */
 
 let insertionSortRecursive = function (A, n) {
