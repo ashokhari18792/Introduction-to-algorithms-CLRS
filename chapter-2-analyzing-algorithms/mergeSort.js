@@ -26,13 +26,13 @@ MERGE(A, p, q, r)
    // other to the end of A[p:r]
 21 while i < nL
     // if R has been copied entirely then we end up i < nL and copy the remainder
-    // of L[i:nL - 1] into A[k:r]
+    // of L[i:nL - 1] into A[k + 1:r]
 22  A[k] = L[i]
 23  i = i + 1
 24  k = k + 1
 25 while j < nR
     // if L has been copied entirely then we end up j < nR and copy the remainder
-    // of  R[j:nR - 1] into A[k:r]
+    // of  R[j:nR - 1] into A[k + 1:r]
 26  A[k] = R[j]
 27  j = j + 1
 28  k = k + 1

@@ -1,3 +1,15 @@
+/*
+INSERTION-SORT(A, n)
+1 for i = 2 to n
+2   key = A[i]
+3   // insert A[i] into the sorted sub-array A[1: i - 1]
+4   j = i - 1
+5   while j > 0 and A[j] > key
+6     A[j + 1] = A[j]
+7     j = j - 1
+8   A[j + 1] = key
+*/
+
 let insertionSort = function (a) {
   // getting the length of the array
   let n = a.length;
