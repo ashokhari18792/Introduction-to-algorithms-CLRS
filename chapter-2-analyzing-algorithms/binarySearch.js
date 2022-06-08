@@ -1,5 +1,5 @@
 /* Pseudo code for binary search recursive.
-BINARY-SEARCH(A, p, r, v)
+BINARY-SEARCH-RECURSIVE(A, p, r, v)
 1 if p > r
 2   return NIL // Array is empty and return NIL.
 3 q = Math.floor((p + r) / 2)
